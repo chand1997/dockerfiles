@@ -1,7 +1,7 @@
 ARG version
-RUN echo "$version" > /tmp/devops.txt
 FROM almalinux:${version:-9}
 # in the above line if we dont provide version during image build using --build-args, it will take 9 as version.
+RUN echo "$version" > /tmp/devops.txt
 ARG user="Chandan"
 RUN echo "${user}" > /tmp/user.txt
 ENV user=$user
