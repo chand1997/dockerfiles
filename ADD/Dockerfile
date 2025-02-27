@@ -1,6 +1,6 @@
 FROM nginx:latest
 RUN rm -rf /usr/share/nginx/html/index.html
-ADD --chmod=700 https://raw.githubusercontent.com/chand1997/dockerfiles/refs/heads/main/CMD/Dockerfile /usr/share/nginx/html/index.html
+ADD --chmod=777 https://raw.githubusercontent.com/chand1997/dockerfiles/refs/heads/main/CMD/Dockerfile /usr/share/nginx/html/index.html
 
 # or you can add this for chmod
 
