@@ -2,7 +2,7 @@ FROM node:20-alpine
 RUN addgroup -S expense && adduser -S expense -G expense
 # this is how we create user, group and assign user to group.
 RUN mkdir /opt/backend
-RUN chown +R expense:expense /opt/backend
+RUN chown -R expense:expense /opt/backend
 WORKDIR /opt/backend
 COPY package.json .
 COPY *.js .
