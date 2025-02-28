@@ -17,6 +17,8 @@ RUN mkdir -p /etc/nginx/ssl/ && \
 RUN touch /var/run/nginx.pid && \
         chown -R nginx:nginx /var/run/nginx.pid /run/nginx.pid
 
+# above 3 run commands is to run container with non-root user(i.e nginx)
+
 RUN rm -rf /usr/share/nginx/html/index.html
 RUN rm -rf /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/nginx.conf 
