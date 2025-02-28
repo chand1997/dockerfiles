@@ -1,0 +1,35 @@
+services:
+  frontend:
+    image: frontend:v1
+    container_name: frontend
+    ports:
+      - "80:80"
+    networks:
+      - expense
+    depends_on:
+      - backend
+
+  mysql:
+    image: mysql:v1
+    container_name: mysql
+    volumes:
+      - mysql
+    networks:
+      - expense
+
+  backend:
+    image: backend:v1
+    container_name: backend
+    networks:
+      - expense
+    depends_on:
+      - mysql
+
+volumes:
+  mysql:
+
+networks:
+  expense:
+    driver: bridge
+
+
