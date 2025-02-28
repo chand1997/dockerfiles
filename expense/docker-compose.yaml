@@ -13,7 +13,7 @@ services:
     image: mysql:v1
     container_name: mysql
     volumes:
-      - mysql
+      - mysql:/var/lib/mysql
     networks:
       - expense
 
