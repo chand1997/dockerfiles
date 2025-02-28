@@ -1,19 +1,4 @@
-# FROM nginx:alpine
-# RUN rm -rf /usr/share/nginx/html/index.html
-# RUN rm -rf /etc/nginx/nginx.conf
-# COPY nginx.conf /etc/nginx/nginx.conf 
-# COPY code /usr/share/nginx/html/
-
-
 FROM nginx:alpine
-
-
-RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-
-
-RUN apk update && apk upgrade  \
-    && apk add  nano curl  \ 
-    && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /var/cache/nginx/client_temp && \
         mkdir -p /var/cache/nginx/proxy_temp && \
@@ -38,5 +23,3 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY code /usr/share/nginx/html/
 
 USER nginx
-
-CMD ["nginx", "-g", "daemon off;"]
