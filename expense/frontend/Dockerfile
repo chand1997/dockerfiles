@@ -11,8 +11,8 @@ FROM nginx:alpine
 RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 
-RUN apt-get update && apt-get upgrade -y \
-    && apt install nano curl -y \ 
+RUN apk update && apk upgrade -y \
+    && apk add  nano curl -y \ 
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /var/cache/nginx/client_temp && \
