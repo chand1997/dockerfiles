@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: frontend:v1
+    image: chadcoderchandan/frontend:v1
     container_name: frontend
     ports:
       - "80:80"
@@ -10,7 +10,7 @@ services:
       - backend
 
   mysql:
-    image: mysql:v1
+    image: chadcoderchandan/mysql:v1
     container_name: mysql
     volumes:
       - mysql:/var/lib/mysql
@@ -18,7 +18,7 @@ services:
       - expense
 
   backend:
-    image: backend:v1
+    image: chadcoderchandan/backend:v1
     container_name: backend
     command: sh -c "sleep 10 && node /opt/backend/index.js"
     networks:
