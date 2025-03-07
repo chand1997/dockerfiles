@@ -1,5 +1,5 @@
 FROM nginx:alpine
-
+RUN rm -rf /etc/nginx/conf.d/default.conf
 RUN mkdir -p /var/cache/nginx/client_temp && \
         mkdir -p /var/cache/nginx/proxy_temp && \
         mkdir -p /var/cache/nginx/fastcgi_temp && \
