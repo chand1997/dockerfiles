@@ -17,4 +17,17 @@ ENV DB_HOST="mysql"
 USER expense
 CMD ["node","index.js"]
 
+# In default network containers cannot communicate(if we try-->err: mysql not found).
+# so we have to create our own network.
+
+# docker network create <network-name>
+
+# docker network connect  <network-name> <container-name> 
+#       --> connecting already created containers to network
+
+# docker run -d --name=<container-name> --network=<network-name> <image-name>:<tag> 
+#       --> creating container directly in the network
+
+# docker network inspect <network-name>
+#    --> to check which containers attached to network.
 
